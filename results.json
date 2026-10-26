@@ -1,0 +1,109 @@
+{
+  "config": {
+    "calibration_size": 800,
+    "calibration_seed": 20261026,
+    "test_size": 1500,
+    "test_seed": 20261027,
+    "blanket_threshold": 0.3,
+    "human_accuracy": 0.9,
+    "human_false_override_rate": 0.03,
+    "human_mean_response_s": 42.0,
+    "human_seed": 777,
+    "cost_error": 10.0,
+    "cost_pause": 3.0
+  },
+  "calibration": {
+    "tau": 0.29,
+    "expected_cost_per_case": 2.70625,
+    "calibration_pause_rate": 0.56125,
+    "calibration_paused_errors": 218,
+    "calibration_pause_precision_estimate": 0.4369710467706014
+  },
+  "scorer_quality": {
+    "auc_raw_uncertainty_on_test": 0.6422392344497607,
+    "auc_calibrated_scorer_on_test": 0.7339444976076555,
+    "ece_calibrated_scorer_on_test": 0.024551359565704336,
+    "base_error_rate_test": 0.36666666666666664,
+    "base_error_rate_calibration": 0.3475
+  },
+  "policies": [
+    {
+      "policy": "never_pause",
+      "tasks": 1500,
+      "agent_errors_without_intervention": 550,
+      "final_errors": 550,
+      "error_rate": 0.36666666666666664,
+      "error_rate_completed_only": 0.36666666666666664,
+      "pauses": 0,
+      "pause_rate": 0.0,
+      "total_human_time_s": 0.0,
+      "mean_human_response_s": 0.0,
+      "errors_prevented": 0,
+      "pause_precision": 0.0,
+      "false_overrides": 0,
+      "aborted": 0,
+      "audit_events": 9002,
+      "audit_chain_valid": true,
+      "audit_completeness": 1.0,
+      "high_novelty_slice": {
+        "n": 455,
+        "agent_errors": 218,
+        "final_errors": 218,
+        "pauses": 0,
+        "errors_prevented": 0
+      }
+    },
+    {
+      "policy": "blanket_fixed_threshold",
+      "tasks": 1500,
+      "agent_errors_without_intervention": 550,
+      "final_errors": 210,
+      "error_rate": 0.14,
+      "error_rate_completed_only": 0.14,
+      "pauses": 906,
+      "pause_rate": 0.604,
+      "total_human_time_s": 43430.4,
+      "mean_human_response_s": 47.94,
+      "errors_prevented": 361,
+      "pause_precision": 0.3984547461368653,
+      "false_overrides": 21,
+      "aborted": 0,
+      "audit_events": 13532,
+      "audit_chain_valid": true,
+      "audit_completeness": 1.0,
+      "high_novelty_slice": {
+        "n": 455,
+        "agent_errors": 218,
+        "final_errors": 81,
+        "pauses": 277,
+        "errors_prevented": 142
+      }
+    },
+    {
+      "policy": "pausewise_calibrated",
+      "tasks": 1500,
+      "agent_errors_without_intervention": 550,
+      "final_errors": 185,
+      "error_rate": 0.12333333333333334,
+      "error_rate_completed_only": 0.12333333333333334,
+      "pauses": 870,
+      "pause_rate": 0.58,
+      "total_human_time_s": 40652.2,
+      "mean_human_response_s": 46.73,
+      "errors_prevented": 381,
+      "pause_precision": 0.4379310344827586,
+      "false_overrides": 16,
+      "aborted": 0,
+      "audit_events": 13352,
+      "audit_chain_valid": true,
+      "audit_completeness": 1.0,
+      "high_novelty_slice": {
+        "n": 455,
+        "agent_errors": 218,
+        "final_errors": 42,
+        "pauses": 402,
+        "errors_prevented": 182
+      }
+    }
+  ]
+}
